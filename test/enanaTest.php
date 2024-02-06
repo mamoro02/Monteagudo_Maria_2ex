@@ -13,6 +13,10 @@ class EnanaTest extends TestCase
          //Juana está muerta
         $enana = new Enana('Juana', 2);
         $this->assertEquals('viva', $enana->getSituacion());
+        $enana = new Enana('Juana', -1);
+        $this->assertEquals('muerta', $enana->getSituacion());
+        $enana = new Enana('Juana', 0);
+        $this->assertEquals('limbo', $enana->getSituacion());
        
     }
     public function testHeridaLeveVive()
