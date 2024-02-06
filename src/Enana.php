@@ -15,13 +15,9 @@ class Enana
         $this->puntosVida = $a2;
         if ($this->puntosVida = 0) {
             $this->situacion = "limbo";
-        }
-
-        if ($this->puntosVida < 0) {
+        }elseif($this->puntosVida < 0){
             $this->situacion = "muerta";
-        }
-
-        if ($this->puntosVida > 0) {
+        }else {
             $this->situacion = "viva";
         }
     }
