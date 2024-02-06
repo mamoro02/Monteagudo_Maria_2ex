@@ -33,13 +33,13 @@ class Enana
         } else {
             return $this->situacion = "viva";
         }
-        
     }
 
     public function heridaGrave()
     {
         #Se le quita toda la vida que posea hasta tener 0 puntos de vida y cambiarle la situacion a limbo
-        $this->situacion = "limbo";
+        $this->puntosVida = 0;
+        return $this->situacion = "limbo";
     }
 
     public function pocima()
@@ -47,7 +47,15 @@ class Enana
         #Recupera 10 puntos de vida y además cambia el valor de situacion si así fuera necesario.
         #Si la Enana está en el limbo, la pocima no le afecta, seguirá en el limbo con 0 puntos de vida.
         #Solo pocimaExtra puede rescatarla del limbo.
-        $this->puntosVida += 20;
+        $this->puntosVida += 10;
+        if ($this->situacion == "limbo") {
+            return $this->situacion = "limbo";
+        } elseif ($this->puntosVida < 0) {
+            return $this->situacion = "muerta";
+        } else {
+            return $this->situacion = "viva";
+        }
+
     }
 
     public function pocimaExtra()
