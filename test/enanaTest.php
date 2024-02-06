@@ -12,13 +12,13 @@ class EnanaTest extends TestCase
         #Se probará la creación de enanas vivas, muertas y en limbo y se comprobará tanto la vida como el estado
         //Juana está muerta
         $enana = new Enana('Juana', 2);
-        $this->assertEquals('muerta', $enana->heridaLeve());
+        $this->assertEquals('viva', $enana->getSituacion());
         //Juana está viva
-        /*  $enana = new Enana('Juana',25);
-        $this->assertEquals('viva', $enana->heridaLeve());
+         $enana = new Enana('Juana',-3);
+        $this->assertEquals('viva', $enana->getSituacion());
         //Juana está limbo
-        $enana = new Enana('Juana',10);
-        $this->assertEquals('limbo', $enana->heridaLeve()); */
+        $enana = new Enana('Juana',0);
+        $this->assertEquals('limbo', $enana->getSituacion());
     }
     public function testHeridaLeveVive()
     {
