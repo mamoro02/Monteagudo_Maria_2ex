@@ -13,11 +13,11 @@ class Enana
         #Deberás de completar situación dependiendo de puntosVida.
         $this->nombre = $a1;
         $this->puntosVida = $a2;
-        if ($this->puntosVida = 0) {
+        if ($this->puntosVida == 0) {
             $this->situacion = "limbo";
-        }elseif($this->puntosVida < 0){
+        } elseif ($this->puntosVida < 0) {
             $this->situacion = "muerta";
-        }else {
+        } else {
             $this->situacion = "viva";
         }
     }
